@@ -81,6 +81,10 @@ export default createConfig({
           event: "Initialize",
           args: {}
         },
+        {
+          event: "Swap",
+          args: {}
+        },
       ],
     },
   },

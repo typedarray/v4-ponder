@@ -1,4 +1,4 @@
-import { primaryKey, onchainTable } from "ponder";
+import { index, relations, primaryKey, onchainTable } from "ponder";
 
 export const pool = onchainTable("pool", (t) => ({
   poolId: t.hex().notNull(),
@@ -11,5 +11,32 @@ export const pool = onchainTable("pool", (t) => ({
 }),
   (table) => ({
     pk: primaryKey({ columns: [table.poolId, table.chainId] }),
+    poolIdIndex: index().on(table.poolId),
   })
 );
+
+export const poolRelations = relations(pool, ({ many }) => ({
+  swaps: many(swap),
+}));
+
+export const swap = onchainTable("swap", (t) => ({
+  id: t.text().primaryKey(),
+  poolId: t.hex().notNull(),
+  sender: t.hex().notNull(),
+  amount0: t.bigint().notNull(),
+  amount1: t.bigint().notNull(),
+  sqrtPriceX96: t.bigint().notNull(),
+  liquidity: t.bigint().notNull(),
+  tick: t.integer().notNull(),
+  fee: t.integer().notNull(),
+  chainId: t.integer().notNull(),
+}),
+  (table) => ({
+    poolIdIndex: index().on(table.poolId),
+    senderIndex: index().on(table.sender),
+  })
+);
+
+export const swapRelations = relations(swap, ({ one }) => ({
+  pool: one(pool, { fields: [swap.poolId], references: [pool.poolId] }),
+}));
