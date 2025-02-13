@@ -24,5 +24,10 @@
   },
   "engines": {
     "node": ">=18.14"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "ponder": "patches/ponder.patch"
+    }
   }
 }
