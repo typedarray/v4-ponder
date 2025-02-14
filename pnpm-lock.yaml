@@ -17,8 +17,8 @@ importers:
         specifier: ^4.5.0
         version: 4.6.20
       ponder:
-        specifier: 0.9.9-next.1
-        version: 0.9.9-next.1(patch_hash=ckfiwos4czdgcxw4hzu56jj6mu)(@opentelemetry/api@1.9.0)(@types/node@20.17.17)(@types/pg@8.11.11)(hono@4.6.20)(typescript@5.7.3)(viem@2.22.21(typescript@5.7.3))
+        specifier: 0.9.12-next.1
+        version: 0.9.12-next.1(patch_hash=ckfiwos4czdgcxw4hzu56jj6mu)(@opentelemetry/api@1.9.0)(@types/node@20.17.17)(@types/pg@8.11.11)(hono@4.6.20)(typescript@5.7.3)(viem@2.22.21(typescript@5.7.3))
       viem:
         specifier: ^2.21.3
         version: 2.22.21(typescript@5.7.3)
@@ -457,9 +457,6 @@ packages:
   '@types/node@20.17.17':
     resolution: {integrity: sha512-/WndGO4kIfMicEQLTi/mDANUu/iVUhT7KboZPdEqqHQ4aTS+3qT3U5gIqWDFV+XouorjfgGqvKILJeHhuQgFYg==}
 
-  '@types/pg-copy-streams@1.2.5':
-    resolution: {integrity: sha512-7D6/GYW2uHIaVU6S/5omI+6RZnwlZBpLQDZAH83xX1rjxAOK0f6/deKyyUTewxqts145VIGn6XWYz1YGf50G5g==}
-
   '@types/pg@8.11.11':
     resolution: {integrity: sha512-kGT1qKM8wJQ5qlawUrEkXgvMSXoV213KfMGXcwfDwUIfUHXqXYXOfS1nE1LINRJVVVx5wCm70XnFlMHaIcQAfw==}
 
@@ -774,11 +771,11 @@ packages:
     resolution: {integrity: sha512-47qPchRCykZC03FhkYAhrvwU4xDBFIj1QPqaarj6mdM/hgUzfPHcpkHJOn3mJAufFeeAxAzeGsr5X0M4k6fLZQ==}
     engines: {node: '>=12'}
 
-  drizzle-orm@0.36.4:
-    resolution: {integrity: sha512-1OZY3PXD7BR00Gl61UUOFihslDldfH4NFRH2MbP54Yxi0G/PKn4HfO65JYZ7c16DeP3SpM3Aw+VXVG9j6CRSXA==}
+  drizzle-orm@0.39.3:
+    resolution: {integrity: sha512-EZ8ZpYvDIvKU9C56JYLOmUskazhad+uXZCTCRN4OnRMsL+xAJ05dv1eCpAG5xzhsm1hqiuC5kAZUCS924u2DTw==}
     peerDependencies:
       '@aws-sdk/client-rds-data': '>=3'
-      '@cloudflare/workers-types': '>=3'
+      '@cloudflare/workers-types': '>=4'
       '@electric-sql/pglite': '>=0.2.0'
       '@libsql/client': '>=0.10.0'
       '@libsql/client-wasm': '>=0.10.0'
@@ -790,7 +787,6 @@ packages:
       '@tidbcloud/serverless': '*'
       '@types/better-sqlite3': '*'
       '@types/pg': '*'
-      '@types/react': '>=18'
       '@types/sql.js': '*'
       '@vercel/postgres': '>=0.8.0'
       '@xata.io/client': '*'
@@ -803,7 +799,6 @@ packages:
       pg: '>=8'
       postgres: '>=3'
       prisma: '*'
-      react: '>=18'
       sql.js: '>=1'
       sqlite3: '>=5'
     peerDependenciesMeta:
@@ -833,8 +828,6 @@ packages:
         optional: true
       '@types/pg':
         optional: true
-      '@types/react':
-        optional: true
       '@types/sql.js':
         optional: true
       '@vercel/postgres':
@@ -858,8 +851,6 @@ packages:
       postgres:
         optional: true
       prisma:
-        optional: true
-      react:
         optional: true
       sql.js:
         optional: true
@@ -1406,8 +1397,8 @@ packages:
     resolution: {integrity: sha512-ip4qdzjkAyDDZklUaZkcRFb2iA118H9SgRh8yzTkSQK8HilsOJF7rSY8HoW5+I0M46AZgX/pxbprf2vvzQCE0Q==}
     hasBin: true
 
-  ponder@0.9.9-next.1:
-    resolution: {integrity: sha512-OzXtxgOOrEikZ75JcQGURLpfVbuYgobWebwZBbO9A8Jcq1oabnDWF6FaN0hFl1f7zJL1Y0/kRyB41hBX7Vsy/g==}
+  ponder@0.9.12-next.1:
+    resolution: {integrity: sha512-tuaEkkxRY/GkijA1uZCE345XZK0+7IZWTYtRQHYRJ2fAafeJ03l2C27w5vOc0SrY+WHmU7dJt2C7OGb6K0hkog==}
     engines: {node: '>=18.14'}
     hasBin: true
     peerDependencies:
@@ -2152,16 +2143,12 @@ snapshots:
     dependencies:
       undici-types: 6.19.8
 
-  '@types/pg-copy-streams@1.2.5':
-    dependencies:
-      '@types/node': 20.17.17
-      '@types/pg': 8.11.11
-
   '@types/pg@8.11.11':
     dependencies:
       '@types/node': 20.17.17
       pg-protocol: 1.7.0
       pg-types: 4.0.2
+    optional: true
 
   '@types/semver@7.5.8': {}
 
@@ -2465,14 +2452,13 @@ snapshots:
 
   dotenv@16.4.7: {}
 
-  drizzle-orm@0.36.4(@electric-sql/pglite@0.2.13)(@opentelemetry/api@1.9.0)(@types/pg@8.11.11)(kysely@0.26.3)(pg@8.13.1)(react@18.3.1):
+  drizzle-orm@0.39.3(@electric-sql/pglite@0.2.13)(@opentelemetry/api@1.9.0)(@types/pg@8.11.11)(kysely@0.26.3)(pg@8.13.1):
     optionalDependencies:
       '@electric-sql/pglite': 0.2.13
       '@opentelemetry/api': 1.9.0
       '@types/pg': 8.11.11
       kysely: 0.26.3
       pg: 8.13.1
-      react: 18.3.1
 
   dset@3.1.4: {}
 
@@ -2995,7 +2981,8 @@ snapshots:
 
   pg-int8@1.0.1: {}
 
-  pg-numeric@1.0.2: {}
+  pg-numeric@1.0.2:
+    optional: true
 
   pg-pool@3.7.0(pg@8.13.1):
     dependencies:
@@ -3022,6 +3009,7 @@ snapshots:
       postgres-date: 2.1.0
       postgres-interval: 3.0.0
       postgres-range: 1.1.4
+    optional: true
 
   pg@8.13.1:
     dependencies:
@@ -3062,7 +3050,7 @@ snapshots:
       sonic-boom: 3.8.1
       thread-stream: 2.7.0
 
-  ponder@0.9.9-next.1(patch_hash=ckfiwos4czdgcxw4hzu56jj6mu)(@opentelemetry/api@1.9.0)(@types/node@20.17.17)(@types/pg@8.11.11)(hono@4.6.20)(typescript@5.7.3)(viem@2.22.21(typescript@5.7.3)):
+  ponder@0.9.12-next.1(patch_hash=ckfiwos4czdgcxw4hzu56jj6mu)(@opentelemetry/api@1.9.0)(@types/node@20.17.17)(@types/pg@8.11.11)(hono@4.6.20)(typescript@5.7.3)(viem@2.22.21(typescript@5.7.3)):
     dependencies:
       '@babel/code-frame': 7.26.2
       '@commander-js/extra-typings': 12.1.0(commander@12.1.0)
@@ -3072,14 +3060,13 @@ snapshots:
       '@escape.tech/graphql-armor-max-tokens': 2.5.0
       '@hono/node-server': 1.13.3(hono@4.6.20)
       '@ponder/utils': 0.2.3(typescript@5.7.3)(viem@2.22.21(typescript@5.7.3))
-      '@types/pg-copy-streams': 1.2.5
       abitype: 0.10.3(typescript@5.7.3)
       commander: 12.1.0
       conf: 12.0.0
       dataloader: 2.2.3
       detect-package-manager: 3.0.2
       dotenv: 16.4.7
-      drizzle-orm: 0.36.4(@electric-sql/pglite@0.2.13)(@opentelemetry/api@1.9.0)(@types/pg@8.11.11)(kysely@0.26.3)(pg@8.13.1)(react@18.3.1)
+      drizzle-orm: 0.39.3(@electric-sql/pglite@0.2.13)(@opentelemetry/api@1.9.0)(@types/pg@8.11.11)(kysely@0.26.3)(pg@8.13.1)
       glob: 10.4.5
       graphql: 16.10.0
       graphql-yoga: 5.10.11(graphql@16.10.0)
@@ -3151,25 +3138,30 @@ snapshots:
 
   postgres-array@2.0.0: {}
 
-  postgres-array@3.0.2: {}
+  postgres-array@3.0.2:
+    optional: true
 
   postgres-bytea@1.0.0: {}
 
   postgres-bytea@3.0.0:
     dependencies:
       obuf: 1.1.2
+    optional: true
 
   postgres-date@1.0.7: {}
 
-  postgres-date@2.1.0: {}
+  postgres-date@2.1.0:
+    optional: true
 
   postgres-interval@1.2.0:
     dependencies:
       xtend: 4.0.2
 
-  postgres-interval@3.0.0: {}
+  postgres-interval@3.0.0:
+    optional: true
 
-  postgres-range@1.1.4: {}
+  postgres-range@1.1.4:
+    optional: true
 
   prelude-ls@1.2.1: {}
 
