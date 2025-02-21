@@ -4,16 +4,16 @@ import { http } from "viem";
 import { PoolManagerAbi } from "./abis/PoolManager";
 
 export default createConfig({
-  ordering: "omnichain",
+  ordering: "multichain",
   networks: {
     mainnet: {
       chainId: 1,
       transport: http(process.env.PONDER_RPC_URL_1),
     },
-    // unichain: {
-    //   chainId: 130,
-    //   transport: http(process.env.PONDER_RPC_URL_130),
-    // },
+    unichain: {
+      chainId: 130,
+      transport: http(process.env.PONDER_RPC_URL_130),
+    },
     arbitrum: {
       chainId: 42161,
       transport: http(process.env.PONDER_RPC_URL_42161),
