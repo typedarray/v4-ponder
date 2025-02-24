@@ -9,34 +9,42 @@ export default createConfig({
     mainnet: {
       chainId: 1,
       transport: http("https://eth-mainnet.g.alchemy.com/v2/SF8Vq82Y1rHsKx3N3T8sVfyd-CNH3Va8"),
+      maxRequestsPerSecond: 400,
     },
     unichain: {
       chainId: 130,
       transport: http("https://unichain-mainnet.g.alchemy.com/v2/SF8Vq82Y1rHsKx3N3T8sVfyd-CNH3Va8"),
+      maxRequestsPerSecond: 400,
     },
     arbitrum: {
       chainId: 42161,
       transport: http("https://arb-mainnet.g.alchemy.com/v2/SF8Vq82Y1rHsKx3N3T8sVfyd-CNH3Va8"),
+      maxRequestsPerSecond: 400,
     },
     optimism: {
       chainId: 10,
       transport: http("https://opt-mainnet.g.alchemy.com/v2/SF8Vq82Y1rHsKx3N3T8sVfyd-CNH3Va8"),
+      maxRequestsPerSecond: 400,
     },
     base: {
       chainId: 8453,
       transport: http("https://base-mainnet.g.alchemy.com/v2/SF8Vq82Y1rHsKx3N3T8sVfyd-CNH3Va8"),
+      maxRequestsPerSecond: 400,
     },
     polygon: {
       chainId: 137,
       transport: http("https://polygon-mainnet.g.alchemy.com/v2/SF8Vq82Y1rHsKx3N3T8sVfyd-CNH3Va8"),
+      maxRequestsPerSecond: 400,
     },
     worldchain: {
       chainId: 480,
       transport: http("https://worldchain-mainnet.g.alchemy.com/v2/SF8Vq82Y1rHsKx3N3T8sVfyd-CNH3Va8"),
+      maxRequestsPerSecond: 400,
     },
     blast: {
       chainId: 81457,
       transport: http("https://blast-mainnet.g.alchemy.com/v2/SF8Vq82Y1rHsKx3N3T8sVfyd-CNH3Va8"),
+      maxRequestsPerSecond: 400,
     },
   },
   contracts: {
