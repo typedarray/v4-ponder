@@ -6,7 +6,7 @@ settings:
 
 patchedDependencies:
   ponder:
-    hash: u6zoayeaciokdtdkstxdh57dvy
+    hash: myofk6txvu2clrupv7ymjw42ja
     path: patches/ponder.patch
 
 importers:
@@ -17,8 +17,8 @@ importers:
         specifier: ^4.5.0
         version: 4.6.20
       ponder:
-        specifier: 0.9.19
-        version: 0.9.19(patch_hash=u6zoayeaciokdtdkstxdh57dvy)(@opentelemetry/api@1.9.0)(@types/node@20.17.17)(@types/pg@8.11.11)(hono@4.6.20)(typescript@5.7.3)(viem@2.22.21(typescript@5.7.3))
+        specifier: ^0.9.19
+        version: 0.9.19(patch_hash=myofk6txvu2clrupv7ymjw42ja)(@opentelemetry/api@1.9.0)(@types/node@20.17.17)(hono@4.6.20)(typescript@5.7.3)(viem@2.22.21(typescript@5.7.3))
       viem:
         specifier: ^2.21.3
         version: 2.22.21(typescript@5.7.3)
@@ -240,26 +240,26 @@ packages:
     resolution: {integrity: sha512-d9zaMRSTIKDLhctzH12MtXvJKSSUhaHcjV+2Z+GK+EEY7XKpP5yR4x+N3TAcHTcu963nIr+TMcCb4DBCYX1z6Q==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
-  '@graphql-tools/executor@1.4.0':
-    resolution: {integrity: sha512-sQN54cCDV9s0ur993/VtQF0hslOubSTMJlN0WaouiJCEgMqE5aXN27kmZvF0oXj0GxbWMC+bPNWEZH1TJVsLxw==}
+  '@graphql-tools/executor@1.4.1':
+    resolution: {integrity: sha512-OuO9I7OFs9HEiVN23twWCV+nXmrqoGWcOCCO/f1eatZSbsXZSEc5hsCK5MDmNGDY3gtRWN03s/C1m47x1UXTog==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
 
-  '@graphql-tools/merge@9.0.19':
-    resolution: {integrity: sha512-iJP3Xke+vgnST58A1Q/1+y3bzfbYalIMnegUNupYHNvHHSE0PXoq8YieqQF8JYzWVACMxiq/M4Y1vW75mS2UVg==}
+  '@graphql-tools/merge@9.0.20':
+    resolution: {integrity: sha512-bJ+rudkkhYaiWzRV3vCyu6CD6bJsrBV1e+L4MOor7p5wSBQBAs8IAW05IktQq1RH1KPvyZ62z77P0/VsapnSKA==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
 
-  '@graphql-tools/schema@10.0.18':
-    resolution: {integrity: sha512-6j2O/07v1zbGvASizMSO7YZdGt/9HfPDx8s9n75sD2xoGfeJ2aRSmI4LkyuvqOpi0ecaa9xErnMEEvUaKBqMbw==}
+  '@graphql-tools/schema@10.0.19':
+    resolution: {integrity: sha512-8osBrTWG9c0ya7sse2fpKlDqi0EAto8Qq9A/PlSZ5J5SY0EE1W9lUcTIVaHc79cOKdh++z4ZHoukzZXrxC8UIg==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
 
-  '@graphql-tools/utils@10.8.1':
-    resolution: {integrity: sha512-fI5NNuqeEAHyp7NuCDjvxWR5PTUXM4AqY9BoC59ZcX4nePAJje27ZsFHbAMS6EKDosY1K/D4ADxsO0P5+FH07A==}
+  '@graphql-tools/utils@10.8.2':
+    resolution: {integrity: sha512-JjWpf9Dj2LXFccAB7CON6jUcXduJlE5XcJfLmKTWBk46Ei2dhDntVAmvIa97YPdLanrgFN5SRt3hSAe3qo/FYg==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
@@ -457,12 +457,6 @@ packages:
   '@types/node@20.17.17':
     resolution: {integrity: sha512-/WndGO4kIfMicEQLTi/mDANUu/iVUhT7KboZPdEqqHQ4aTS+3qT3U5gIqWDFV+XouorjfgGqvKILJeHhuQgFYg==}
 
-  '@types/node@20.17.19':
-    resolution: {integrity: sha512-LEwC7o1ifqg/6r2gn9Dns0f1rhK+fPFDoMiceTJ6kWmVk6bgXBI/9IOWfVan4WiAavK9pIVWdX0/e3J+eEUh5A==}
-
-  '@types/pg@8.11.11':
-    resolution: {integrity: sha512-kGT1qKM8wJQ5qlawUrEkXgvMSXoV213KfMGXcwfDwUIfUHXqXYXOfS1nE1LINRJVVVx5wCm70XnFlMHaIcQAfw==}
-
   '@types/semver@7.5.8':
     resolution: {integrity: sha512-I8EUhyrgfLrcTkzV3TSsGyl1tSuPrEDzr0yd5m90UgNxQkyDXULk3b6MlQqTCpZpNtWe1K0hzclnZkTcLBe2UQ==}
 
@@ -535,16 +529,16 @@ packages:
     resolution: {integrity: sha512-ApcWxkrs1WmEMS2CaLLFUEem/49erT3sxIVjpzU5f6zmVcnijtDSrhoK2zVobOIikZJdH63jdAXOrvjf6eOUNQ==}
     engines: {node: '>=18.0.0'}
 
-  '@whatwg-node/fetch@0.10.3':
-    resolution: {integrity: sha512-jCTL/qYcIW2GihbBRHypQ/Us7saWMNZ5fsumsta+qPY0Pmi1ccba/KRQvgctmQsbP69FWemJSs8zVcFaNwdL0w==}
+  '@whatwg-node/fetch@0.10.5':
+    resolution: {integrity: sha512-+yFJU3hmXPAHJULwx0VzCIsvr/H0lvbPvbOH3areOH3NAuCxCwaJsQ8w6/MwwMcvEWIynSsmAxoyaH04KeosPg==}
     engines: {node: '>=18.0.0'}
 
-  '@whatwg-node/node-fetch@0.7.9':
-    resolution: {integrity: sha512-rp4/lzxK5DDxFFdXcCR3gG4OyWPHqmN1GrKostx2NEy7sHUQA/B3j0M2z+qfMQVg5SC4RRm0eFwD73e+GgAM3A==}
+  '@whatwg-node/node-fetch@0.7.11':
+    resolution: {integrity: sha512-UQXJyaFxThqE/br5aiey+pJgRSq+YHH01cHs7rCJ7HQcuuCMpMhrLmCvT1sTJeDQmMljQGESs1P6vmEEptPR5w==}
     engines: {node: '>=18.0.0'}
 
-  '@whatwg-node/server@0.9.67':
-    resolution: {integrity: sha512-s7gqiQ/B0p4WdqPtI5WuXp9K37DtuOlk/KF7mK+gy/cmXcqfdSAjSweDpwxtmb2lDmzxDgtrT4mpOUaddSNpCw==}
+  '@whatwg-node/server@0.9.69':
+    resolution: {integrity: sha512-zXqJrC7gM4fdxD/W2v7H+x5/6jveHlso5sfNs3dLpgGnXLbto5hH4i+J009U3YBLw4Y3Pximkv4Y7UYV49UWqg==}
     engines: {node: '>=18.0.0'}
 
   abitype@0.10.3:
@@ -992,8 +986,8 @@ packages:
   flatted@3.3.2:
     resolution: {integrity: sha512-AiwGJM8YcNOaobumgtng+6NHuOqC3A7MixFeDafM3X9cIUM+xUXoS5Vfgf+OihAYe20fxqNM9yPBXJzRtZ/4eA==}
 
-  foreground-child@3.3.0:
-    resolution: {integrity: sha512-Ld2g8rrAyMYFXBhEqMz8ZAHBi4J4uS1i/CxGMDnjyFWddMXLVcDp051DZfu+t7+ab7Wv6SMqpWmyFIj5UbfFvg==}
+  foreground-child@3.3.1:
+    resolution: {integrity: sha512-gIXjKqtFuWEgzFRJA9WCQeSJLZDjgJUOMCMzxtvFq/37KojM1BFGufqsCy0r4qSQmYLsZYMeyRqzIWOMup03sw==}
     engines: {node: '>=14'}
 
   fs.realpath@1.0.0:
@@ -1038,8 +1032,8 @@ packages:
   graphemer@1.4.0:
     resolution: {integrity: sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==}
 
-  graphql-yoga@5.12.0:
-    resolution: {integrity: sha512-JKsGnXlrqoF2wdnE99EvETqBbvkPa6aa6T+PqMbegnTFpYrVNuhCXpzGgSEFroqR1VGHMlFrsmHYdHPZb/TbAA==}
+  graphql-yoga@5.12.1:
+    resolution: {integrity: sha512-5XI+SNkwJQoACoSWDKzBjHpbd6V32tZZ68lpJZ/7uvAq5kzTLPmsi1V7trOA/k1GDf+XYaeUnpl8dqWDtohdeg==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       graphql: ^15.2.0 || ^16.0.0
@@ -1255,9 +1249,6 @@ packages:
     resolution: {integrity: sha512-S48WzZW777zhNIrn7gxOlISNAqi9ZC/uQFnRdbeIHhZhCA6UqpkOT8T1G7BvfdgP4Er8gF4sUbaS0i7QvIfCWw==}
     engines: {node: '>=8'}
 
-  obuf@1.1.2:
-    resolution: {integrity: sha512-PX1wu0AmAdPqOL1mWhqmlOd8kOIZQwGZw6rh7uby9fTc5lhaOWFLX3I6R1hrF9k3zUY40e6igsLGkDXK92LJNg==}
-
   on-exit-leak-free@2.1.2:
     resolution: {integrity: sha512-0eJJY6hXLGf1udHwfNftBqH+g73EU4B504nZeKpz1sYRKafAghwxEJunB2O7rDZkL4PGfsMVnTXZ2EjibbqcsA==}
     engines: {node: '>=14.0.0'}
@@ -1345,10 +1336,6 @@ packages:
     resolution: {integrity: sha512-WCtabS6t3c8SkpDBUlb1kjOs7l66xsGdKpIPZsg4wR+B3+u9UAum2odSsF9tnvxg80h4ZxLWMy4pRjOsFIqQpw==}
     engines: {node: '>=4.0.0'}
 
-  pg-numeric@1.0.2:
-    resolution: {integrity: sha512-BM/Thnrw5jm2kKLE5uJkXqqExRUY/toLHda65XgFTBTFYZyopbKjBe29Ii3RbkvlsMoFwD+tHeGaCjjv0gHlyw==}
-    engines: {node: '>=4'}
-
   pg-pool@3.7.1:
     resolution: {integrity: sha512-xIOsFoh7Vdhojas6q3596mXFsR8nwBQBXX5JiV7p9buEVAGqYL4yFzclON5P9vFrpu1u7Zwl2oriyDa89n0wbw==}
     peerDependencies:
@@ -1363,10 +1350,6 @@ packages:
   pg-types@2.2.0:
     resolution: {integrity: sha512-qTAAlrEsl8s4OiEQY69wDvcMIdQN6wdz5ojQiOy6YRMuynxenON0O5oCpJI6lshc6scgAY8qvJ2On/p+CXY0GA==}
     engines: {node: '>=4'}
-
-  pg-types@4.0.2:
-    resolution: {integrity: sha512-cRL3JpS3lKMGsKaWndugWQoLOCoP+Cic8oseVcbr0qhPzYD5DWXK+RZ9LY9wxRf7RQia4SCwQlXk0q6FCPrVng==}
-    engines: {node: '>=10'}
 
   pg@8.13.3:
     resolution: {integrity: sha512-P6tPt9jXbL9HVu/SSRERNYaYG++MjnscnegFh9pPHihfoBSujsrka0hyuymMzeJKFWrcG8wvCKy8rCe8e5nDUQ==}
@@ -1417,36 +1400,17 @@ packages:
     resolution: {integrity: sha512-VpZrUqU5A69eQyW2c5CA1jtLecCsN2U/bD6VilrFDWq5+5UIEVO7nazS3TEcHf1zuPYO/sqGvUvW62g86RXZuA==}
     engines: {node: '>=4'}
 
-  postgres-array@3.0.2:
-    resolution: {integrity: sha512-6faShkdFugNQCLwucjPcY5ARoW1SlbnrZjmGl0IrrqewpvxvhSLHimCVzqeuULCbG0fQv7Dtk1yDbG3xv7Veog==}
-    engines: {node: '>=12'}
-
   postgres-bytea@1.0.0:
     resolution: {integrity: sha512-xy3pmLuQqRBZBXDULy7KbaitYqLcmxigw14Q5sj8QBVLqEwXfeybIKVWiqAXTlcvdvb0+xkOtDbfQMOf4lST1w==}
     engines: {node: '>=0.10.0'}
-
-  postgres-bytea@3.0.0:
-    resolution: {integrity: sha512-CNd4jim9RFPkObHSjVHlVrxoVQXz7quwNFpz7RY1okNNme49+sVyiTvTRobiLV548Hx/hb1BG+iE7h9493WzFw==}
-    engines: {node: '>= 6'}
 
   postgres-date@1.0.7:
     resolution: {integrity: sha512-suDmjLVQg78nMK2UZ454hAG+OAW+HQPZ6n++TNDUX+L0+uUlLywnoxJKDou51Zm+zTCjrCl0Nq6J9C5hP9vK/Q==}
     engines: {node: '>=0.10.0'}
 
-  postgres-date@2.1.0:
-    resolution: {integrity: sha512-K7Juri8gtgXVcDfZttFKVmhglp7epKb1K4pgrkLxehjqkrgPhfG6OO8LHLkfaqkbpjNRnra018XwAr1yQFWGcA==}
-    engines: {node: '>=12'}
-
   postgres-interval@1.2.0:
     resolution: {integrity: sha512-9ZhXKM/rw350N1ovuWHbGxnGh/SNJ4cnxHiM0rxE4VN41wsg8P8zWn9hv/buK00RP4WvlOyr/RBDiptyxVbkZQ==}
     engines: {node: '>=0.10.0'}
-
-  postgres-interval@3.0.0:
-    resolution: {integrity: sha512-BSNDnbyZCXSxgA+1f5UU2GmwhoI0aU5yMxRGO8CdFEcY2BQF9xm/7MqKnYoM1nJDk8nONNWDk9WeSmePFhQdlw==}
-    engines: {node: '>=12'}
-
-  postgres-range@1.1.4:
-    resolution: {integrity: sha512-i/hbxIE9803Alj/6ytL7UHQxRvZkI9O4Sy+J3HGc4F4oo/2eQAjTSNJ0bfxyse3bH0nuVesCk+3IRLaMtG3H6w==}
 
   prelude-ls@1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
@@ -1957,9 +1921,9 @@ snapshots:
 
   '@eslint/js@8.57.1': {}
 
-  '@graphql-tools/executor@1.4.0(graphql@16.10.0)':
+  '@graphql-tools/executor@1.4.1(graphql@16.10.0)':
     dependencies:
-      '@graphql-tools/utils': 10.8.1(graphql@16.10.0)
+      '@graphql-tools/utils': 10.8.2(graphql@16.10.0)
       '@graphql-typed-document-node/core': 3.2.0(graphql@16.10.0)
       '@repeaterjs/repeater': 3.0.6
       '@whatwg-node/disposablestack': 0.0.5
@@ -1967,20 +1931,20 @@ snapshots:
       tslib: 2.8.1
       value-or-promise: 1.0.12
 
-  '@graphql-tools/merge@9.0.19(graphql@16.10.0)':
+  '@graphql-tools/merge@9.0.20(graphql@16.10.0)':
     dependencies:
-      '@graphql-tools/utils': 10.8.1(graphql@16.10.0)
+      '@graphql-tools/utils': 10.8.2(graphql@16.10.0)
       graphql: 16.10.0
       tslib: 2.8.1
 
-  '@graphql-tools/schema@10.0.18(graphql@16.10.0)':
+  '@graphql-tools/schema@10.0.19(graphql@16.10.0)':
     dependencies:
-      '@graphql-tools/merge': 9.0.19(graphql@16.10.0)
-      '@graphql-tools/utils': 10.8.1(graphql@16.10.0)
+      '@graphql-tools/merge': 9.0.20(graphql@16.10.0)
+      '@graphql-tools/utils': 10.8.2(graphql@16.10.0)
       graphql: 16.10.0
       tslib: 2.8.1
 
-  '@graphql-tools/utils@10.8.1(graphql@16.10.0)':
+  '@graphql-tools/utils@10.8.2(graphql@16.10.0)':
     dependencies:
       '@graphql-typed-document-node/core': 3.2.0(graphql@16.10.0)
       cross-inspect: 1.0.1
@@ -2142,18 +2106,6 @@ snapshots:
     dependencies:
       undici-types: 6.19.8
 
-  '@types/node@20.17.19':
-    dependencies:
-      undici-types: 6.19.8
-    optional: true
-
-  '@types/pg@8.11.11':
-    dependencies:
-      '@types/node': 20.17.19
-      pg-protocol: 1.7.1
-      pg-types: 4.0.2
-    optional: true
-
   '@types/semver@7.5.8': {}
 
   '@typescript-eslint/eslint-plugin@6.21.0(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.7.3))(eslint@8.57.1)(typescript@5.7.3)':
@@ -2252,21 +2204,21 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  '@whatwg-node/fetch@0.10.3':
+  '@whatwg-node/fetch@0.10.5':
     dependencies:
-      '@whatwg-node/node-fetch': 0.7.9
+      '@whatwg-node/node-fetch': 0.7.11
       urlpattern-polyfill: 10.0.0
 
-  '@whatwg-node/node-fetch@0.7.9':
+  '@whatwg-node/node-fetch@0.7.11':
     dependencies:
       '@whatwg-node/disposablestack': 0.0.5
       busboy: 1.6.0
       tslib: 2.8.1
 
-  '@whatwg-node/server@0.9.67':
+  '@whatwg-node/server@0.9.69':
     dependencies:
       '@whatwg-node/disposablestack': 0.0.5
-      '@whatwg-node/fetch': 0.10.3
+      '@whatwg-node/fetch': 0.10.5
       tslib: 2.8.1
 
   abitype@0.10.3(typescript@5.7.3):
@@ -2456,11 +2408,10 @@ snapshots:
 
   dotenv@16.4.7: {}
 
-  drizzle-orm@0.39.3(@electric-sql/pglite@0.2.13)(@opentelemetry/api@1.9.0)(@types/pg@8.11.11)(kysely@0.26.3)(pg@8.13.3):
+  drizzle-orm@0.39.3(@electric-sql/pglite@0.2.13)(@opentelemetry/api@1.9.0)(kysely@0.26.3)(pg@8.13.3):
     optionalDependencies:
       '@electric-sql/pglite': 0.2.13
       '@opentelemetry/api': 1.9.0
-      '@types/pg': 8.11.11
       kysely: 0.26.3
       pg: 8.13.3
 
@@ -2641,7 +2592,7 @@ snapshots:
 
   flatted@3.3.2: {}
 
-  foreground-child@3.3.0:
+  foreground-child@3.3.1:
     dependencies:
       cross-spawn: 7.0.6
       signal-exit: 4.1.0
@@ -2663,7 +2614,7 @@ snapshots:
 
   glob@10.4.5:
     dependencies:
-      foreground-child: 3.3.0
+      foreground-child: 3.3.1
       jackspeak: 3.4.3
       minimatch: 9.0.5
       minipass: 7.1.2
@@ -2696,16 +2647,16 @@ snapshots:
 
   graphemer@1.4.0: {}
 
-  graphql-yoga@5.12.0(graphql@16.10.0):
+  graphql-yoga@5.12.1(graphql@16.10.0):
     dependencies:
       '@envelop/core': 5.1.0
-      '@graphql-tools/executor': 1.4.0(graphql@16.10.0)
-      '@graphql-tools/schema': 10.0.18(graphql@16.10.0)
-      '@graphql-tools/utils': 10.8.1(graphql@16.10.0)
+      '@graphql-tools/executor': 1.4.1(graphql@16.10.0)
+      '@graphql-tools/schema': 10.0.19(graphql@16.10.0)
+      '@graphql-tools/utils': 10.8.2(graphql@16.10.0)
       '@graphql-yoga/logger': 2.0.1
       '@graphql-yoga/subscription': 5.0.3
-      '@whatwg-node/fetch': 0.10.3
-      '@whatwg-node/server': 0.9.67
+      '@whatwg-node/fetch': 0.10.5
+      '@whatwg-node/server': 0.9.69
       dset: 3.1.4
       graphql: 16.10.0
       lru-cache: 10.4.3
@@ -2898,9 +2849,6 @@ snapshots:
     dependencies:
       path-key: 3.1.1
 
-  obuf@1.1.2:
-    optional: true
-
   on-exit-leak-free@2.1.2: {}
 
   once@1.4.0:
@@ -2982,9 +2930,6 @@ snapshots:
 
   pg-int8@1.0.1: {}
 
-  pg-numeric@1.0.2:
-    optional: true
-
   pg-pool@3.7.1(pg@8.13.3):
     dependencies:
       pg: 8.13.3
@@ -3000,17 +2945,6 @@ snapshots:
       postgres-bytea: 1.0.0
       postgres-date: 1.0.7
       postgres-interval: 1.2.0
-
-  pg-types@4.0.2:
-    dependencies:
-      pg-int8: 1.0.1
-      pg-numeric: 1.0.2
-      postgres-array: 3.0.2
-      postgres-bytea: 3.0.0
-      postgres-date: 2.1.0
-      postgres-interval: 3.0.0
-      postgres-range: 1.1.4
-    optional: true
 
   pg@8.13.3:
     dependencies:
@@ -3051,7 +2985,7 @@ snapshots:
       sonic-boom: 3.8.1
       thread-stream: 2.7.0
 
-  ponder@0.9.19(patch_hash=u6zoayeaciokdtdkstxdh57dvy)(@opentelemetry/api@1.9.0)(@types/node@20.17.17)(@types/pg@8.11.11)(hono@4.6.20)(typescript@5.7.3)(viem@2.22.21(typescript@5.7.3)):
+  ponder@0.9.19(patch_hash=myofk6txvu2clrupv7ymjw42ja)(@opentelemetry/api@1.9.0)(@types/node@20.17.17)(hono@4.6.20)(typescript@5.7.3)(viem@2.22.21(typescript@5.7.3)):
     dependencies:
       '@babel/code-frame': 7.26.2
       '@commander-js/extra-typings': 12.1.0(commander@12.1.0)
@@ -3067,10 +3001,10 @@ snapshots:
       dataloader: 2.2.3
       detect-package-manager: 3.0.2
       dotenv: 16.4.7
-      drizzle-orm: 0.39.3(@electric-sql/pglite@0.2.13)(@opentelemetry/api@1.9.0)(@types/pg@8.11.11)(kysely@0.26.3)(pg@8.13.3)
+      drizzle-orm: 0.39.3(@electric-sql/pglite@0.2.13)(@opentelemetry/api@1.9.0)(kysely@0.26.3)(pg@8.13.3)
       glob: 10.4.5
       graphql: 16.10.0
-      graphql-yoga: 5.12.0(graphql@16.10.0)
+      graphql-yoga: 5.12.1(graphql@16.10.0)
       hono: 4.6.20
       http-terminator: 3.2.0
       ink: 4.4.1(react@18.3.1)
@@ -3139,30 +3073,13 @@ snapshots:
 
   postgres-array@2.0.0: {}
 
-  postgres-array@3.0.2:
-    optional: true
-
   postgres-bytea@1.0.0: {}
 
-  postgres-bytea@3.0.0:
-    dependencies:
-      obuf: 1.1.2
-    optional: true
-
   postgres-date@1.0.7: {}
-
-  postgres-date@2.1.0:
-    optional: true
 
   postgres-interval@1.2.0:
     dependencies:
       xtend: 4.0.2
-
-  postgres-interval@3.0.0:
-    optional: true
-
-  postgres-range@1.1.4:
-    optional: true
 
   prelude-ls@1.2.1: {}
 
