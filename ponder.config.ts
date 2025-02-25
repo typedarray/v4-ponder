@@ -6,11 +6,11 @@ import { PoolManagerAbi } from "./abis/PoolManager";
 export default createConfig({
   ordering: "multichain",
   networks: {
-    // mainnet: {
-    //   chainId: 1,
-    //   transport: http("https://eth-mainnet.g.alchemy.com/v2/SF8Vq82Y1rHsKx3N3T8sVfyd-CNH3Va8"),
-    //   maxRequestsPerSecond: 400,
-    // },
+    mainnet: {
+      chainId: 1,
+      transport: http("https://eth-mainnet.g.alchemy.com/v2/SF8Vq82Y1rHsKx3N3T8sVfyd-CNH3Va8"),
+      maxRequestsPerSecond: 400,
+    },
     // unichain: {
     //   chainId: 130,
     //   transport: http("https://unichain-mainnet.g.alchemy.com/v2/SF8Vq82Y1rHsKx3N3T8sVfyd-CNH3Va8"),
@@ -51,10 +51,10 @@ export default createConfig({
     PoolManager: {
       abi: PoolManagerAbi,
       network: {
-        // mainnet: {
-        //   address: "0x000000000004444c5dc75cb358380d2e3de08a90",
-        //   startBlock: 21688329,
-        // },
+        mainnet: {
+          address: "0x000000000004444c5dc75cb358380d2e3de08a90",
+          startBlock: 21688329,
+        },
         // unichain: {
         //   address: "0x1f98400000000000000000000000000000000004",
         //   startBlock: 0,
