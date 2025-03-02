@@ -11,11 +11,11 @@ export default createConfig({
       transport: http("https://eth-mainnet.g.alchemy.com/v2/SF8Vq82Y1rHsKx3N3T8sVfyd-CNH3Va8"),
       maxRequestsPerSecond: 400,
     },
-    unichain: {
-      chainId: 130,
-      transport: http("https://unichain-mainnet.g.alchemy.com/v2/SF8Vq82Y1rHsKx3N3T8sVfyd-CNH3Va8"),
-      maxRequestsPerSecond: 400,
-    },
+    // unichain: {
+    //   chainId: 130,
+    //   transport: http("https://unichain-mainnet.g.alchemy.com/v2/SF8Vq82Y1rHsKx3N3T8sVfyd-CNH3Va8"),
+    //   maxRequestsPerSecond: 400,
+    // },
     arbitrum: {
       chainId: 42161,
       transport: http("https://arb-mainnet.g.alchemy.com/v2/SF8Vq82Y1rHsKx3N3T8sVfyd-CNH3Va8"),
@@ -55,10 +55,10 @@ export default createConfig({
           address: "0x000000000004444c5dc75cb358380d2e3de08a90",
           startBlock: 21688329,
         },
-        unichain: {
-          address: "0x1f98400000000000000000000000000000000004",
-          startBlock: 0,
-        },
+        // unichain: {
+        //   address: "0x1f98400000000000000000000000000000000004",
+        //   startBlock: 0,
+        // },
         arbitrum: {
           address: "0x360e68faccca8ca495c1b759fd9eee466db9fb32",
           startBlock: 297842872,
