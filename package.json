@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "hono": "^4.5.0",
-    "ponder": "^0.9.6",
+    "ponder": "0.10.0-next.1",
     "viem": "^2.21.3"
   },
   "devDependencies": {
@@ -24,10 +24,5 @@
   },
   "engines": {
     "node": ">=18.14"
-  },
-  "pnpm": {
-    "patchedDependencies": {
-      "ponder": "patches/ponder.patch"
-    }
   }
 }
