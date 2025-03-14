@@ -15,7 +15,7 @@ ponder.on("PoolManager:Initialize", async ({ event, context }) => {
 
 ponder.on("PoolManager:Swap", async ({ event, context }) => {
   await context.db.insert(schema.swap).values({
-    id: event.log.id,
+    id: event.id,
     poolId: event.args.id,
     sender: event.args.sender,
     amount0: event.args.amount0,
