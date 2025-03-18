@@ -7,35 +7,43 @@ export default createConfig({
   networks: {
     mainnet: {
       chainId: 1,
-      transport: http(process.env.PONDER_RPC_URL_1),
+      transport: http("https://eth-mainnet.g.alchemy.com/v2/SF8Vq82Y1rHsKx3N3T8sVfyd-CNH3Va8"),
+      maxRequestsPerSecond: 200,
     },
     unichain: {
       chainId: 130,
-      transport: http(process.env.PONDER_RPC_URL_130),
+      transport: http("https://unichain-mainnet.g.alchemy.com/v2/SF8Vq82Y1rHsKx3N3T8sVfyd-CNH3Va8"),
+      maxRequestsPerSecond: 200,
     },
     arbitrum: {
       chainId: 42161,
-      transport: http(process.env.PONDER_RPC_URL_42161),
+      transport: http("https://arb-mainnet.g.alchemy.com/v2/SF8Vq82Y1rHsKx3N3T8sVfyd-CNH3Va8"),
+      maxRequestsPerSecond: 200,
     },
     optimism: {
       chainId: 10,
-      transport: http(process.env.PONDER_RPC_URL_10),
+      transport: http("https://opt-mainnet.g.alchemy.com/v2/SF8Vq82Y1rHsKx3N3T8sVfyd-CNH3Va8"),
+      maxRequestsPerSecond: 200,
     },
     base: {
       chainId: 8453,
-      transport: http(process.env.PONDER_RPC_URL_8453),
+      transport: http("https://base-mainnet.g.alchemy.com/v2/SF8Vq82Y1rHsKx3N3T8sVfyd-CNH3Va8"),
+      maxRequestsPerSecond: 200,
     },
     polygon: {
       chainId: 137,
-      transport: http(process.env.PONDER_RPC_URL_137),
+      transport: http("https://polygon-mainnet.g.alchemy.com/v2/SF8Vq82Y1rHsKx3N3T8sVfyd-CNH3Va8"),
+      maxRequestsPerSecond: 200,
     },
     worldchain: {
       chainId: 480,
-      transport: http(process.env.PONDER_RPC_URL_480),
+      transport: http("https://worldchain-mainnet.g.alchemy.com/v2/SF8Vq82Y1rHsKx3N3T8sVfyd-CNH3Va8"),
+      maxRequestsPerSecond: 200,
     },
     blast: {
       chainId: 81457,
-      transport: http(process.env.PONDER_RPC_URL_81457),
+      transport: http("https://blast-mainnet.g.alchemy.com/v2/SF8Vq82Y1rHsKx3N3T8sVfyd-CNH3Va8"),
+      maxRequestsPerSecond: 200,
     },
   },
   contracts: {
