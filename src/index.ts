@@ -9,7 +9,7 @@ ponder.on("PoolManager:Initialize", async ({ event, context }) => {
     fee: event.args.fee,
     tickSpacing: event.args.tickSpacing,
     hooks: event.args.hooks,
-    chainId: context.network.chainId,
+    chainId: context.chain.id,
   });
 });
 
@@ -24,6 +24,6 @@ ponder.on("PoolManager:Swap", async ({ event, context }) => {
     liquidity: event.args.liquidity,
     tick: event.args.tick,
     fee: event.args.fee,
-    chainId: context.network.chainId,
+    chainId: context.chain.id,
   });
 });
