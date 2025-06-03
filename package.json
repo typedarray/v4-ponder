@@ -25,10 +25,5 @@
   "engines": {
     "node": ">=18.14"
   },
-  "packageManager": "pnpm@9.10.0",
-  "pnpm": {
-    "patchedDependencies": {
-      "ponder": "patches/ponder.patch"
-    }
-  }
+  "packageManager": "pnpm@9.10.0"
 }
