@@ -1,55 +1,54 @@
 import { createConfig } from "ponder";
-import { http } from "viem";
 
 import { PoolManagerAbi } from "./abis/PoolManager";
 
 export default createConfig({
   ordering: "multichain",
-  networks: {
+  chains: {
     mainnet: {
-      chainId: 1,
-      transport: http("https://eth-mainnet.g.alchemy.com/v2/SF8Vq82Y1rHsKx3N3T8sVfyd-CNH3Va8"),
+      id: 1,
+      rpc: "https://eth-mainnet.g.alchemy.com/v2/SF8Vq82Y1rHsKx3N3T8sVfyd-CNH3Va8",
       maxRequestsPerSecond: 200,
     },
     unichain: {
-      chainId: 130,
-      transport: http("https://unichain-mainnet.g.alchemy.com/v2/SF8Vq82Y1rHsKx3N3T8sVfyd-CNH3Va8"),
+      id: 130,
+      rpc: "https://unichain-mainnet.g.alchemy.com/v2/SF8Vq82Y1rHsKx3N3T8sVfyd-CNH3Va8",
       maxRequestsPerSecond: 200,
     },
     arbitrum: {
-      chainId: 42161,
-      transport: http("https://arb-mainnet.g.alchemy.com/v2/SF8Vq82Y1rHsKx3N3T8sVfyd-CNH3Va8"),
+      id: 42161,
+      rpc: "https://arb-mainnet.g.alchemy.com/v2/SF8Vq82Y1rHsKx3N3T8sVfyd-CNH3Va8",
       maxRequestsPerSecond: 200,
     },
     optimism: {
-      chainId: 10,
-      transport: http("https://opt-mainnet.g.alchemy.com/v2/SF8Vq82Y1rHsKx3N3T8sVfyd-CNH3Va8"),
+      id: 10,
+      rpc: "https://opt-mainnet.g.alchemy.com/v2/SF8Vq82Y1rHsKx3N3T8sVfyd-CNH3Va8",
       maxRequestsPerSecond: 200,
     },
     base: {
-      chainId: 8453,
-      transport: http("https://base-mainnet.g.alchemy.com/v2/SF8Vq82Y1rHsKx3N3T8sVfyd-CNH3Va8"),
+      id: 8453,
+      rpc: "https://base-mainnet.g.alchemy.com/v2/SF8Vq82Y1rHsKx3N3T8sVfyd-CNH3Va8",
       maxRequestsPerSecond: 200,
     },
     polygon: {
-      chainId: 137,
-      transport: http("https://polygon-mainnet.g.alchemy.com/v2/SF8Vq82Y1rHsKx3N3T8sVfyd-CNH3Va8"),
+      id: 137,
+      rpc: "https://polygon-mainnet.g.alchemy.com/v2/SF8Vq82Y1rHsKx3N3T8sVfyd-CNH3Va8",
       maxRequestsPerSecond: 200,
     },
     worldchain: {
-      chainId: 480,
-      transport: http("https://worldchain-mainnet.g.alchemy.com/v2/SF8Vq82Y1rHsKx3N3T8sVfyd-CNH3Va8"),
+      id: 480,
+      rpc: "https://worldchain-mainnet.g.alchemy.com/v2/SF8Vq82Y1rHsKx3N3T8sVfyd-CNH3Va8",
       maxRequestsPerSecond: 200,
     },
     blast: {
-      chainId: 81457,
-      transport: http("https://blast-mainnet.g.alchemy.com/v2/SF8Vq82Y1rHsKx3N3T8sVfyd-CNH3Va8"),
+      id: 81457,
+      rpc: "https://blast-mainnet.g.alchemy.com/v2/SF8Vq82Y1rHsKx3N3T8sVfyd-CNH3Va8",
       maxRequestsPerSecond: 200,
     },
   },
   contracts: {
     PoolManager: {
-      network: {
+      chain: {
         mainnet: {
           address: "0x000000000004444c5dc75cb358380d2e3de08a90",
           startBlock: 21688329
