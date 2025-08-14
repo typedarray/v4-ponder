@@ -1,7 +1,7 @@
 import { index, relations, primaryKey, onchainTable } from "ponder";
 
 export const swap = onchainTable("swap", (t) => ({
-  id: t.text().primaryKey(),
+  id: t.text().notNull(),
   poolId: t.hex().notNull(),
   sender: t.hex().notNull(),
   amount0: t.bigint().notNull(),
@@ -13,6 +13,7 @@ export const swap = onchainTable("swap", (t) => ({
   chainId: t.integer().notNull(),
 }),
   (table) => ({
+    pk: primaryKey({ columns: [table.id, table.chainId] }),
     poolIdIndex: index().on(table.poolId),
     senderIndex: index().on(table.sender),
   })
