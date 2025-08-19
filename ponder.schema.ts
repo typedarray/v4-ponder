@@ -10,7 +10,7 @@ export const swap = onchainTable("swap", (t) => ({
   liquidity: t.bigint().notNull(),
   tick: t.integer().notNull(),
   fee: t.integer().notNull(),
-  chainId: t.integer().notNull(),
+  chainId: t.bigint().notNull(),
 }),
   (table) => ({
     poolIdIndex: index().on(table.poolId),
@@ -26,7 +26,7 @@ export const pool = onchainTable("pool", (t) => ({
   fee: t.integer().notNull(),
   tickSpacing: t.integer().notNull(),
   hooks: t.hex().notNull(),
-  chainId: t.integer().notNull(),
+  chainId: t.bigint().notNull(),
 }),
   (table) => ({
     pk: primaryKey({ columns: [table.poolId, table.chainId] }),
