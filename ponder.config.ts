@@ -6,42 +6,42 @@ export default createConfig({
   chains: {
     mainnet: {
       id: 1,
-      rpc: "https://eth-mainnet.g.alchemy.com/v2/SF8Vq82Y1rHsKx3N3T8sVfyd-CNH3Va8",
+      rpc: process.env.PONDER_RPC_URL_1,
       maxRequestsPerSecond: 200,
     },
     unichain: {
       id: 130,
-      rpc: "https://unichain-mainnet.g.alchemy.com/v2/SF8Vq82Y1rHsKx3N3T8sVfyd-CNH3Va8",
+      rpc: process.env.PONDER_RPC_URL_130,
       maxRequestsPerSecond: 200,
     },
     arbitrum: {
       id: 42161,
-      rpc: "https://arb-mainnet.g.alchemy.com/v2/SF8Vq82Y1rHsKx3N3T8sVfyd-CNH3Va8",
+      rpc: process.env.PONDER_RPC_URL_42161,
       maxRequestsPerSecond: 200,
     },
     optimism: {
       id: 10,
-      rpc: "https://opt-mainnet.g.alchemy.com/v2/SF8Vq82Y1rHsKx3N3T8sVfyd-CNH3Va8",
+      rpc: process.env.PONDER_RPC_URL_10,
       maxRequestsPerSecond: 200,
     },
     base: {
       id: 8453,
-      rpc: "https://base-mainnet.g.alchemy.com/v2/SF8Vq82Y1rHsKx3N3T8sVfyd-CNH3Va8",
+      rpc: process.env.PONDER_RPC_URL_8453,
       maxRequestsPerSecond: 200,
     },
     polygon: {
       id: 137,
-      rpc: "https://polygon-mainnet.g.alchemy.com/v2/SF8Vq82Y1rHsKx3N3T8sVfyd-CNH3Va8",
+      rpc: process.env.PONDER_RPC_URL_137,
       maxRequestsPerSecond: 200,
     },
     worldchain: {
       id: 480,
-      rpc: "https://worldchain-mainnet.g.alchemy.com/v2/SF8Vq82Y1rHsKx3N3T8sVfyd-CNH3Va8",
+      rpc: process.env.PONDER_RPC_URL_480,
       maxRequestsPerSecond: 200,
     },
     blast: {
       id: 81457,
-      rpc: "https://blast-mainnet.g.alchemy.com/v2/SF8Vq82Y1rHsKx3N3T8sVfyd-CNH3Va8",
+      rpc: process.env.PONDER_RPC_URL_81457,
       maxRequestsPerSecond: 200,
     },
   },
@@ -82,16 +82,6 @@ export default createConfig({
         // },
       },
       abi: PoolManagerAbi,
-      filter: [
-        {
-          event: "Initialize",
-          args: {}
-        },
-        {
-          event: "Swap",
-          args: {}
-        },
-      ],
     },
   },
 });
