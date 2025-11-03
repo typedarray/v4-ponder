@@ -693,10 +693,10 @@ index 9900f8c92ea6d4399e8e0869b5e9df7c8ce6b440..0080222b3130895a4c315c188f8ceb43
 \ No newline at end of file
 diff --git a/dist/esm/rpc/simpleHttp.js b/dist/esm/rpc/simpleHttp.js
 new file mode 100644
-index 0000000000000000000000000000000000000000..e85190751ad41b19b1581de9598dc34cac5ab891
+index 0000000000000000000000000000000000000000..16a306fee993035d10586a12a7d3b4c251b392a1
 --- /dev/null
 +++ b/dist/esm/rpc/simpleHttp.js
-@@ -0,0 +1,88 @@
+@@ -0,0 +1,74 @@
 +import { HttpRequestError, TimeoutError } from "viem";
 +import { stringify, } from "viem/utils";
 +export function getHttpRpcClient(common, url) {
@@ -708,8 +708,6 @@ index 0000000000000000000000000000000000000000..e85190751ad41b19b1581de9598dc34c
 +                ...(params.fetchOptions ?? {}),
 +            };
 +            const { headers, method } = fetchOptions;
-+            const controller = new AbortController();
-+            const timeoutId = setTimeout(() => controller.abort(), 10000);
 +            try {
 +                const init = {
 +                    body: stringify({
@@ -722,42 +720,32 @@ index 0000000000000000000000000000000000000000..e85190751ad41b19b1581de9598dc34c
 +                        ...headers,
 +                    },
 +                    method: method || "POST",
-+                    signal: controller.signal,
++                    signal: AbortSignal.timeout(10000),
 +                };
 +                const request = new Request(url, init);
 +                const response = await fetch(request);
 +                const parseTimeoutId = setTimeout(() => {
 +                    common.logger.warn({
-+                        msg: "JSON-RPC response parsing is taking longer than expected",
++                        msg: "JSON-RPC response body download is taking longer than expected",
 +                        url,
 +                        method: body.method,
 +                        duration: 5000,
 +                    });
 +                }, 5000);
 +                let data;
-+                if (response.headers.get("Content-Type")?.startsWith("application/json")) {
-+                    try {
-+                        data = await response.json();
-+                    }
-+                    finally {
-+                        clearTimeout(parseTimeoutId);
-+                    }
++                try {
++                    data = await response.text();
 +                }
-+                else {
-+                    try {
-+                        data = await response.text();
-+                    }
-+                    finally {
-+                        clearTimeout(parseTimeoutId);
-+                    }
-+                    try {
-+                        data = JSON.parse(data || "{}");
-+                    }
-+                    catch (err) {
-+                        if (response.ok)
-+                            throw err;
-+                        data = { error: data };
-+                    }
++                finally {
++                    clearTimeout(parseTimeoutId);
++                }
++                try {
++                    data = JSON.parse(data || "{}");
++                }
++                catch (err) {
++                    if (response.ok)
++                        throw err;
++                    data = { error: data };
 +                }
 +                if (!response.ok) {
 +                    throw new HttpRequestError({
@@ -768,13 +756,11 @@ index 0000000000000000000000000000000000000000..e85190751ad41b19b1581de9598dc34c
 +                        url,
 +                    });
 +                }
-+                clearTimeout(timeoutId);
 +                return data.result;
 +            }
 +            catch (_error) {
 +                const error = _error;
-+                clearTimeout(timeoutId);
-+                if (error.name === "AbortError") {
++                if (error.name === "TimeoutError") {
 +                    throw new TimeoutError({ body, url });
 +                }
 +                if (error instanceof HttpRequestError)
@@ -788,11 +774,11 @@ index 0000000000000000000000000000000000000000..e85190751ad41b19b1581de9598dc34c
 \ No newline at end of file
 diff --git a/dist/esm/rpc/simpleHttp.js.map b/dist/esm/rpc/simpleHttp.js.map
 new file mode 100644
-index 0000000000000000000000000000000000000000..39140e55b658e990d5b8a6d39517b92469b57c3a
+index 0000000000000000000000000000000000000000..329b6a692ce4a4c5c0616a8637e1c3ea5650940d
 --- /dev/null
 +++ b/dist/esm/rpc/simpleHttp.js.map
 @@ -0,0 +1 @@
-+{"version":3,"file":"simpleHttp.js","sourceRoot":"","sources":["../../../src/rpc/simpleHttp.ts"],"names":[],"mappings":"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"}
++{"version":3,"file":"simpleHttp.js","sourceRoot":"","sources":["../../../src/rpc/simpleHttp.ts"],"names":[],"mappings":"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"}
 \ No newline at end of file
 diff --git a/dist/esm/runtime/events.js.map b/dist/esm/runtime/events.js.map
 index 3a372100c208ff2b0c5e09e5bbaeff1dabd896be..952c6ac8e93d77cf8e9f1bdcd0d14c59ac20bae3 100644
@@ -3083,11 +3069,11 @@ index 0000000000000000000000000000000000000000..112c51e1650522d151f24231d098f662
 \ No newline at end of file
 diff --git a/dist/types/rpc/simpleHttp.d.ts.map b/dist/types/rpc/simpleHttp.d.ts.map
 new file mode 100644
-index 0000000000000000000000000000000000000000..26c4b6ad8becd3401dde05d433d13f878b2f6045
+index 0000000000000000000000000000000000000000..8473e03d596962b80ff027d9f304e96327fccc9e
 --- /dev/null
 +++ b/dist/types/rpc/simpleHttp.d.ts.map
 @@ -0,0 +1 @@
-+{"version":3,"file":"simpleHttp.d.ts","sourceRoot":"","sources":["../../../src/rpc/simpleHttp.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,MAAM,EAAE,MAAM,sBAAsB,CAAC;AAEnD,OAAO,EACL,KAAK,qBAAqB,EAC1B,KAAK,qBAAqB,EAE3B,MAAM,YAAY,CAAC;AAEpB,MAAM,MAAM,UAAU,GAAG;IACvB,OAAO,CAAC,EAAE,KAAK,GAAG,SAAS,CAAC;IAC5B,MAAM,EAAE,MAAM,CAAC;IACf,MAAM,CAAC,EAAE,GAAG,GAAG,SAAS,CAAC;IACzB,EAAE,CAAC,EAAE,MAAM,GAAG,SAAS,CAAC;CACzB,CAAC;AAEF,MAAM,MAAM,aAAa,GAAG;IAC1B,OAAO,CAAC,IAAI,SAAS,UAAU,EAC7B,MAAM,EAAE,qBAAqB,CAAC,IAAI,CAAC,GAClC,OAAO,CAAC,qBAAqB,CAAC,IAAI,CAAC,CAAC,CAAC;CACzC,CAAC;AAEF,wBAAgB,gBAAgB,CAAC,MAAM,EAAE,MAAM,EAAE,GAAG,EAAE,MAAM,GAAG,aAAa,CAwF3E"}
++{"version":3,"file":"simpleHttp.d.ts","sourceRoot":"","sources":["../../../src/rpc/simpleHttp.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,MAAM,EAAE,MAAM,sBAAsB,CAAC;AAEnD,OAAO,EACL,KAAK,qBAAqB,EAC1B,KAAK,qBAAqB,EAE3B,MAAM,YAAY,CAAC;AAEpB,MAAM,MAAM,UAAU,GAAG;IACvB,OAAO,CAAC,EAAE,KAAK,GAAG,SAAS,CAAC;IAC5B,MAAM,EAAE,MAAM,CAAC;IACf,MAAM,CAAC,EAAE,GAAG,GAAG,SAAS,CAAC;IACzB,EAAE,CAAC,EAAE,MAAM,GAAG,SAAS,CAAC;CACzB,CAAC;AAEF,MAAM,MAAM,aAAa,GAAG;IAC1B,OAAO,CAAC,IAAI,SAAS,UAAU,EAC7B,MAAM,EAAE,qBAAqB,CAAC,IAAI,CAAC,GAClC,OAAO,CAAC,qBAAqB,CAAC,IAAI,CAAC,CAAC,CAAC;CACzC,CAAC;AAEF,wBAAgB,gBAAgB,CAAC,MAAM,EAAE,MAAM,EAAE,GAAG,EAAE,MAAM,GAAG,aAAa,CA0E3E"}
 \ No newline at end of file
 diff --git a/dist/types/runtime/filter.d.ts b/dist/types/runtime/filter.d.ts
 index 7237bd96cfbc3a4685684e3286fc99b354f64511..4d1124f1262aade018688e6fe4842535bb4055e1 100644
